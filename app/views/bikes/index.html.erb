@@ -1,1 +1,7 @@
 <h1>Hello from the index view</h1>
+
+<% @bikes.each do |bike| %>
+
+  <h3><%= bike.kind %></h3>
+
+  <% end %>
