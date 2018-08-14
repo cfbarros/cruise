@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+# creates a constant for kinds of bikes
+KINDS = %w[Mountain Street Electric]
+# creates a constant for size of bikes
+SIZES = %w[Small Medium Large]
+# iterates over creating a user and a bike and making the relation between the two
+10.times do
+  user = User.new(email: Faker::Internet.email, password: rand(100_000..999_999),
+              first_name: Faker::BreakingBad.character, address: Faker::Address.full_address)
+  bike = Bike.new(kind: KINDS.sample, brand: Faker::Esport.team, location: Faker::Address.full_address,
+                 size: SIZES.sample, price: rand(10..25))
+  user.save
+  bike.user = user
+  bike.save
+end
