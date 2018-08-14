@@ -13,3 +13,10 @@ SIZES = %w[Small Medium Large]
   bike.user = user
   bike.save
 end
+
+3.times do
+  rent = Rent.new
+  rent.user = User.find(rand(1..10))
+  rent.bike = Bike.find(rand(1..10))
+  rent.save
+end
