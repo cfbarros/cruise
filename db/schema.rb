@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2018_08_13_220149) do
     t.string "location"
     t.string "brand"
     t.string "price"
-    t.bigint "bike_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bike_id"], name: "index_bikes_on_bike_id"
+    t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
   create_table "rents", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_220149) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bikes", "bikes"
+  add_foreign_key "bikes", "users"
   add_foreign_key "rents", "bikes"
   add_foreign_key "rents", "users"
 end
