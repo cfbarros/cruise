@@ -21,7 +21,7 @@ end
 
 private
 
-def rent_param
+def rent_params
   params.require(:rent).permit(:user_id, :bike_id)
 end
 
