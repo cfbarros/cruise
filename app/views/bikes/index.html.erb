@@ -1,7 +1,11 @@
 <h1>Hello from the index view</h1>
 
+  <ul>
 <% @bikes.each do |bike| %>
-
-  <h3><%= bike.kind %></h3>
-
+    <li>
+      <%= link_to bike.kind, bike %>
+    </li>
   <% end %>
+  </ul>
+
+  <%= link_to "Rent your bike", new_bike_path, class: 'btn btn-primary' %>

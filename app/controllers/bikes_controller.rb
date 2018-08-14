@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_bike, only: [ :show, :edit, :update, :destroy ]
 
   def index
@@ -6,27 +7,31 @@ class BikesController < ApplicationController
   end
 
   def show
+    @bike = authorize(@bike)
   end
 
   def new
-    @bike = Bike.new
+    @bike = authorize(Bike.new)
   end
 
   def create
     @bike = Bike.new(bike_params)
-    if Bike.save
-      redirect_to user_path(@user)
+    @bike.user = current_user
+    authorize @bike
+    if @bike.save
+      redirect_to @bike
     else
       render :new
     end
   end
 
   def edit
+    @bike = Bike.find(bike_parms)
   end
 
   def update
     @bike = Bike.update(bike_params)
-    if Bike.save
+    if @bike.save
       redirect_to user_path(@user)
     else
       render :edit
@@ -45,7 +50,13 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    param.require(:bikes).permit(:kind, :size, :location, :brand, :price)
+    params.require(:bike).permit(:kind, :size, :location, :brand, :price)
   end
 
+  def user_not_authorized(exception)
+   policy_name = exception.policy.class.to_s.underscore
+
+   flash[:error] = t "You must create a account to add a bike",  scope: "pundit"
+   redirect_to new_user_registration
+  end
 end
