@@ -20,3 +20,11 @@ end
   rent.bike = Bike.find(rand(1..10))
   rent.save
 end
+
+cruise = User.new(email: "cruise@gmail.com", password: "999999", first_name: "Cruise",
+            last_name: :bikes, address: "Rio de Janeiro")
+cruise.save
+rent = Rent.new
+rent.user = cruise
+rent.bike = Bike.find(rand(1..10))
+rent.save

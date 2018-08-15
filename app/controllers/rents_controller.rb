@@ -16,7 +16,8 @@ def create
 end
 
 def show
-@rent = Rent.find(rent_params)
+  @user = current_user
+@rent = @user.rents
 end
 
 private
