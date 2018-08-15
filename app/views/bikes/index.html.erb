@@ -18,7 +18,9 @@
 <div class="bikes-container">
   <div class="cards-container">
     <div class="row">
-      <%= render 'shared/card', bikes: @bikes %>
+      <% @bikes.each do |bike| %>
+        <%= render 'shared/card', bike: bike %>
+      <% end %>
     </div>
   </div>
     <div id="googleMap">
@@ -33,7 +35,7 @@
     }
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyfDSiDl2WSkUS6fAbaCsckUaTohqPy5I&callback=myMap"></script>
 
     </div>
   </div>
