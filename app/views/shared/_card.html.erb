@@ -1,8 +1,8 @@
 
-<% @bikes.each do |bike| %>
+
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-      <div class="card-category"><%= bike.price %></div>
+      <div class="card-category">$<%= bike.price %></div>
       <div class="card-description">
         <h2><%= bike.kind %></h2>
         <p><%= bike.brand %></p>
@@ -11,5 +11,4 @@
       <a class="card-link" href="#" ></a>
     </div>
   </div>
-<% end %>
 
