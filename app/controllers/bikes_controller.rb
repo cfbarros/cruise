@@ -16,6 +16,7 @@
 
   def show
     @bike = authorize(@bike)
+    @rent = Rent.new
   end
 
   def new
