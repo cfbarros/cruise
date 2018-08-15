@@ -1,0 +1,18 @@
+.bikes-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+  #googleMap {
+  height: calc(100vh);
+  flex: 0 0 450px;
+  position: sticky !important;
+  top: 0 !important;
+  margin: 0px;
+  padding: 0px;
+  }
+
+.cards-container {
+  width: 90%;
+  padding: 0px 15px;
+}
