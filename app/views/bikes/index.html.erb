@@ -1,9 +1,9 @@
 <!-- Banner -->
 <div class="banner"  style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('https://images.unsplash.com/photo-1475666675596-cca2035b3d79?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7aeeca33f714526d6177c02d506804fc&auto=format&fit=crop&w=1050&q=80">
 
-    <h1>Rent a bike now. Discover the city.</h1>
-  </div>
+  <h1>Rent a bike now. Discover the city.</h1>
 </div>
+
 
 <!-- Filter bar -->
 <div class="topnav">
@@ -23,21 +23,7 @@
       <% end %>
     </div>
   </div>
-    <div id="googleMap">
-
-    <script>
-    function myMap() {
-    var mapProp= {
-        center:new google.maps.LatLng(51.508742,-0.120850),
-        zoom:5,
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
-    </script>
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNDBMjSiAdVEplquRIh_lva8_gLGPPxzI=myMap"></script>
-
+    <div id="map" data-markers="<%= @markers.to_json %>">
     </div>
   </div>
 

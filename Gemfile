@@ -10,6 +10,7 @@ gem 'redis'
 gem 'devise'
 gem 'pundit'
 gem 'faker'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
