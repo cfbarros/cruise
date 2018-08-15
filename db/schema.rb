@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_190746) do
   create_table "bikes", force: :cascade do |t|
     t.string "kind"
     t.string "size"
-    t.string "location"
+    t.string "address"
     t.string "brand"
     t.string "price"
     t.bigint "user_id"

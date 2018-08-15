@@ -24,7 +24,7 @@
         <p class="text-muted">Daily rental</p>
         <br>
         <div class="from-group text-left">
-          <%= form_with model: [@bike, @rent], :html=> { class: 'side_selector' } do |f|%>
+          <%= form_for [@bike, @rent], :html=> { class: 'side_selector' } do |f|%>
             <%= f.label :start_date%>
             <%= f.date_field :start_date, class: "form-control"%>
             <br>
