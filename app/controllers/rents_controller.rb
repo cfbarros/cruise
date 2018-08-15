@@ -17,7 +17,7 @@ end
 
 def show
   @user = current_user
-@rent = @user.rents
+  @rent = @user.rents
 end
 
 private
