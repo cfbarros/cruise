@@ -3,7 +3,15 @@
   before_action :set_bike, only: [ :show, :edit, :update, :destroy ]
 
   def index
-  @bikes = policy_scope(Bike)
+    @bikes = policy_scope(Bike).where.not(latitude: nil, longitude: nil)
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
@@ -50,7 +58,7 @@
   end
 
   def bike_params
-    params.require(:bike).permit(:kind, :size, :location, :brand, :price)
+    params.require(:bike).permit(:kind, :size, :address, :brand, :price)
   end
 
   def user_not_authorized(exception)
