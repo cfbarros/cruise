@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'bikes#index'
   resources :users, only: :show
   resources :bikes do
-    resources :rents, only: :new
+    resources :rents, only: [:new, :create]
   end
-  resources :rents, except: :new
+  resources :rents, except: [:new, :create]
 end

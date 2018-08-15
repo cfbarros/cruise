@@ -1,0 +1,54 @@
+
+<div class="wrapper">
+  <h1 class="text-center">Your bike for today:</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="photo-container">
+          <img src="https://kitt.lewagon.com/placeholder/cities/shanghai" class="img-responsive" alt="">
+        </div>
+      </div>
+       <div class="col-md-6">
+        <div class="rent-info">
+          <div class="info-user">
+            <h2 class="text-center"><%= @rent.bike.user.first_name %>'s bike</h2>
+          </div>
+          <div class="info-price">
+            <h3 class="text-center">R$<%= @rent.bike.price %></h3>
+            <p class="text-center">Daily rental</p>
+          </div>
+        </div>
+        <div class="bike-info">
+          <p><strong>Kind: </strong><%= @rent.bike.kind %> </p>
+          <p><strong>Brand: </strong><%= @rent.bike.brand %></p>
+          <p><strong>Size: </strong><%= @rent.bike.size %></p>
+          <p><strong>Location: </strong><%= @rent.bike.location %></p>
+        </div>
+<!--         <div class="rent-range">
+          <div class="pick-up-date">
+            <p>Pick-up</p>
+            <p><%=  %></p>
+          </div>
+          <div class="delivery-date">
+            <p>Delivery</p>
+            <p><%=  %></p>
+          </div>
+        </div>
+        <div class="bike-owner">
+          <div class="owner-avatar">
+
+          </div>
+          <div class="owner-info">
+
+          </div>
+        </div> -->
+        <div class="back-button text-center">
+        <%= link_to "Back to Bikes", bikes_path, class:"btn btn-danger" %>
+        </div>
+
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+

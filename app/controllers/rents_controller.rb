@@ -17,7 +17,8 @@ end
 
 def show
   @user = current_user
-  @rent = @user.rents
+  @rent = Rent.find(params[:id])
+  authorize @rent
 end
 
 private
