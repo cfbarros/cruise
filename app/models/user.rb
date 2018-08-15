@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :rents
   has_many :bikes, dependent: :destroy
   # validations of user beyond basic devise
-  # validates :first_name, :location, presence: true
+  validates :first_name, :address, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

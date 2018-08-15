@@ -50,7 +50,7 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:kind, :size, :location, :brand, :price)
+    params.require(:bike).permit(:kind, :size, :address, :brand, :price)
   end
 
   def user_not_authorized(exception)
