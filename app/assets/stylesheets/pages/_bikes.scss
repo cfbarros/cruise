@@ -17,6 +17,18 @@
   padding: 0px 15px;
 }
 
+
+.breath {
+  margin-top: 50px;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  select {
+    margin-bottom: 15px;
+  }
+
 .top-text {
   margin-bottom: 50px;
 }
