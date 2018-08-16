@@ -1,8 +1,15 @@
 class User < ApplicationRecord
   # user database relations
-  has_many :bikes, through: :rents
-  has_many :rents
   has_many :bikes, dependent: :destroy
+  has_many :rents, dependent: :destroy
+
+  def bike_rents
+    renters = []
+    bikes.each do |b|
+      renters += b.rents
+    end
+    renters
+  end
   # validations of user beyond basic devise
   # validates :first_name, :address, presence: true
   # Include default devise modules. Others available are:
