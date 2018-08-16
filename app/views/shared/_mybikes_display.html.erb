@@ -1,33 +1,26 @@
 <div class="container">
-<% @user.bike_rents.each do |rent| %>
-    <div class="tabs">
-      <ul class="bikelist">
-        <li class="bikebox">
-          <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=1267&q=80" alt="" class="avatar-large">
-              <div class="renter-name">
-                <p>RENTED BY</p>
-                <h4><%= rent.user.email %></h4>
+  <% @user.bikes.each do |bike| %>
+    <ul class="bikelist">
+      <li class="bikebox  flex-me">
+        <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=1267&q=80" alt="" class="avatar-large">
+        <div class="renter-name">
+            <p>Available</p>
+        </div>
+        <div class="start-date">
+          <h4>Start date:</h4>
+          <p>Available</p>
 
-                </div>
-                <div class="start-date">
-                <p>PICK-UP DATE:</p>
-                <%= rent.start_date.strftime("%d.%m.%y") %>
+        </div>
+        <div class="end-date">
+          <h4>End date:</h4>
+          <p>Available</p>
 
-                </div>
-                <div class="end-date">
-                <p>RETURN DATE:</p>
-                <%= rent.end_date.strftime("%d.%m.%y") %>
+        </div>
+        <div class="edit-delete">
 
-                </div>
-                <div class="edit-delete">
-
-
-                </div>
-        </li>
-
-        </ul>
-
-      </div>
+        </div>
+      </li>
+    </ul>
   <% end %>
+</div>
 
-  </div>
