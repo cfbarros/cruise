@@ -4,14 +4,23 @@
   <h1>Rent a bike now. Discover the city.</h1>
 </div>
 
-
 <!-- Filter bar -->
 <div class="topnav">
-  <a class="active" href="#home">ALL</a>
-  <a href="#about">KIND</a>
-  <a href="#contact">SIZE</a>
-  <a href="#contact">BRAND</a>
-  <input type="text" placeholder="Search..">
+  <div class="filters">
+    <a class="active" href="#home">ALL</a>
+    <a href="#about">KIND</a>
+    <a href="#contact">SIZE</a>
+    <a href="#contact">BRAND</a>
+  </div>
+  <div class="search-bar">
+    <%= form_tag bikes_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a bike near you"
+      %>
+      <% end %>
+  </div>
 </div>
 
 
@@ -19,12 +28,16 @@
 <div class="bikes-container">
   <div class="cards-container">
     <div class="row">
-      <% @bikes.each do |bike| %>
-        <%= render 'shared/card', bike: bike %>
-      <% end %>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <% @bikes.each do |bike| %>
+          <%= render 'shared/card', bike: bike %>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 order-sm-first sticky">
+        <div id="map" data-markers="<%= @markers.to_json %>"></div>
+    </div>
     </div>
   </div>
-    <div id="map" data-markers="<%= @markers.to_json %>">
-    </div>
-  </div>
+</div>
+
 
