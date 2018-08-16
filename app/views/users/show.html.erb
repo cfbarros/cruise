@@ -1,1 +1,16 @@
-<h1>hi</h1>
+<% unless current_user.rents == [] %>
+<div class="wrapper">
+  <div class="container make-it-flex">
+    <div>
+      <% rent = current_user.rents.first %>
+      <h1><%= rent.bike.user.first_name %>'s Bike is your <br> bike until <%= rent.end_date.strftime('%m-%e-%y %H:%M') %></h1>
+    </div>
+    <div class='bike-img'>
+      <%= image_tag 'adriana-gomez-407862-unsplash', class: 'img-tag' %>
+    </div>
+  </div>
+</div>
+<% end %>
+<% unless current_user.bikes == [] %>
+  current_user.bikes.name
+<% end %>
