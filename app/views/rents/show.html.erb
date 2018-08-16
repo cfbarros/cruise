@@ -1,54 +1,54 @@
-
-<div class="wrapper">
-  <h1 class="text-center">Your bike for today:</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="photo-container">
-          <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=967&q=80" class="img-responsive" alt="">
+<h1 class="text-center top-text">Your bike for today:</h1>
+<div class="container text-center" style="height: 100vh;">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="photo-container">
+        <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=967&q=80" class="img-responsive" alt="">
+      </div>
+    </div>
+    <div class="information col-md-5">
+      <div class="rent-info">
+        <div class="info-user">
+          <h2 class="text-center"><%= @rent.bike.user.first_name %>'s <%= @rent.bike.brand %></h2>
+        </div>
+        <div class="info-price">
+          <h2 class="text-center">R$<%= @rent.bike.price %></h2>
+          <p class="text-center">Daily rental</p>
         </div>
       </div>
-       <div class="col-md-6">
-        <div class="rent-info">
-          <div class="info-user">
-            <h2 class="text-center"><%= @rent.bike.user.first_name %>'s bike</h2>
-          </div>
-          <div class="info-price">
-            <h3 class="text-center">R$<%= @rent.bike.price %></h3>
-            <p class="text-center">Daily rental</p>
-          </div>
-        </div>
-        <div class="bike-info">
-          <p><strong>Kind: </strong><%= @rent.bike.kind %> </p>
-          <p><strong>Brand: </strong><%= @rent.bike.brand %></p>
-          <p><strong>Size: </strong><%= @rent.bike.size %></p>
-          <p><strong>Location: </strong><%= @rent.bike.address %></p>
-        </div>
-<!--         <div class="rent-range">
-          <div class="pick-up-date">
-            <p>Pick-up</p>
-            <p><%=  %></p>
-          </div>
-          <div class="delivery-date">
-            <p>Delivery</p>
-            <p><%=  %></p>
-          </div>
-        </div>
-        <div class="bike-owner">
-          <div class="owner-avatar">
-
-          </div>
-          <div class="owner-info">
-
-          </div>
-        </div> -->
-        <div class="back-button text-center">
-        <%= link_to "Back to Bikes", bikes_path, class:"btn btn-danger" %>
-        </div>
-
-       </div>
+      <div class="bike-info text-left">
+        <p><strong>KIND: </strong><%= @rent.bike.kind %> </p>
+        <p><strong>BRAND: </strong><%= @rent.bike.brand %></p>
+        <p><strong>SIZE: </strong><%= @rent.bike.size %></p>
+        <p><strong>LOCATION: </strong><%= @rent.bike.address %></p>
       </div>
+      <div class="rent-range">
+        <div class="pick-up-date">
+          <p>Pick-up</p>
+          <p><strong><%= @rent.start_date.strftime("%d.%m.%y") %></strong></p>
+        </div>
+        <div class="delivery-date">
+          <p>Delivery</p>
+          <p><strong><%= @rent.end_date.strftime("%d.%m.%y") %></strong></p>
+        </div>
+      </div>
+      <div class="bike-owner">
+        <div class="owner-avatar">
+          <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="img-circle"/>
+        </div>
+        <div class="owner-info text-left">
+          <h6>Bike's Owner:</h6>
+          <h4><strong><%= @rent.bike.user.first_name %> <%= @rent.bike.user.last_name %> </strong></h4>
+          <h6><%= @rent.bike.user.address %></h6>
+        </div>
+      </div>
+      <div class="back-button text-center">
+      <%= link_to "Back to Bikes", bikes_path, class:"btn btn-danger btn-block" %>
+      </div>
+
     </div>
   </div>
 </div>
+
+
 

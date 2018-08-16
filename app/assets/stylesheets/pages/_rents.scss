@@ -1,15 +1,23 @@
+.top-text{
+  margin-bottom: 50px;
+}
+
 .confirmation-container{
   display: flex;
   justify-content: space-around;
 }
 
 .photo-container {
-  margin: 20px 50px 50px 50px;
+  margin: 0px 50px 50px 50px;
 
 }
 
 .bike-photo{
 width: 500px;
+}
+
+.information{
+  background-color: white;
 }
 
 .rent-info{
@@ -23,12 +31,18 @@ width: 500px;
   flex-direction: column;
   border-bottom: 1px solid rgb(200,200,200);
   padding-left: 25px;
+  margin-top: 12.5px;
 }
 
 .rent-range{
   display: flex;
   justify-content: space-around;
-  // border-bottom: 1px solid rgb(200,200,200);
+  border-bottom: 1px solid rgb(200,200,200);
+  margin-top: 12.5px;
+}
+
+.rent-range p {
+  color: #2e99b0;
 }
 
 .pick-up-date{
@@ -44,6 +58,17 @@ width: 500px;
 .bike-owner{
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
+}
+.owner-avatar img {
+  width: 60px;
+}
+.owner-info {
+  margin-left: 10px;
+}
+.back-button {
+  margin-top: 30px;
+  margin-bottom: 25px;
 }
 
 
