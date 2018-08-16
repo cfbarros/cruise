@@ -30,24 +30,7 @@
       <%= link_to "Add a Bike", new_bike_path, class: 'btn btn-danger' %>
     </div>
   </div>
-  <table>
-    <tbody>
-      <% bikes.each do |bike| %>
-        <% if bike.rents == [] %>
-          6666666
-          need to put this stuff here
+  <%= render "./shared/mybikes_display", locals: { user: @user } %>
 
-        <% end %>
-        <% bike.rents.each do |rent| %>
-          <tr>
-            <td>Photo here</td>
-            <td>
-              <tr><td>rented by:</td></tr>
-              <tr><td><%= rent.user.full_name %></td></tr>
-            </td>
-          </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+
 <% end %>
