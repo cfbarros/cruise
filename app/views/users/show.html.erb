@@ -38,4 +38,5 @@
       <%= link_to "Add a Bike", new_bike_path, class: 'btn btn-danger' %>
     </div>
   </div>
+  <%= render "./shared/mybikes_display", locals: { user: @user } %>
 <% end %>
