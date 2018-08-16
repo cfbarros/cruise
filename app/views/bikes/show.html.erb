@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="container text-center" style="height: 100vh;">
-    <h1>How about this bike?</h1>
-    <br>
-    <br>
+    <h1 class="top-text">How about this bike?</h1>
+    <!-- <br>
+    <br> -->
     <div class="grid-triple-block">
-      <div class="col-md-3">
+      <div class="col-md-3 block-around">
         <ul>
-          <h3 class="text-left"><%= @bike.user.first_name %>'s bike</h3>
+          <h3 class="text-left"><%= @bike.user.first_name %>'s <%= @bike.brand %></h3>
           <br>
           <div class="text-left">
           <p><strong>KIND: </strong> <%= @bike.kind %></p>
@@ -18,9 +18,19 @@
       </div>
       <div class="col-md-6">
       <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=1267&q=80" class="img-responsive" alt="Mountain Bike">
+     <!--    <div class="bike-owner">
+          <div class="user-img">
+            <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+          </div>
+          <div class="owner-info text-left">
+            <h6>Bike's owner</h6>
+            <h4><strong> <%= @bike.user.first_name %> <%= @bike.user.last_name %> </strong></h4>
+            <h6> User since 2015 </h6>
+          </div>
+        </div> -->
       </div>
-       <div class="col-md-3 text-left">
-        <h2>$<%= @bike.price %></h2>
+       <div class="col-md-3 text-left block-around">
+        <h2>R$<%= @bike.price %></h2>
         <p class="text-muted">Daily rental</p>
         <br>
         <div class="from-group text-left">
@@ -31,7 +41,7 @@
             <%= f.label :end_date%>
             <%= f.date_field :end_date, class: "form-control"%>
             <br>
-            <%= f.submit class: "btn btn-primary btn-block" %>
+            <%= f.submit "Rent this bike", class: "btn btn-primary btn-block" %>
         <% end %>
         </div>
         <br>
