@@ -2,7 +2,6 @@
   max-height: 200px;
   max-width: 250px;
   margin-left: 20px;
-
 }
 .wrapper {
   display: flex;
@@ -11,9 +10,26 @@
 
 .make-it-flex {
   display: flex;
-  margin: 20px 0px;
+  margin: 60px 0px 0px;
   justify-content: space-aroud;
   justify-content: space-around;
-  border: 1px solid red;
+  // border: 1px solid black;
+  box-shadow: 1px 1px 7px rgba(70, 70, 70, .8);
   padding: 30px 0px;
+  background-color: white;
 }
+
+.make-space {
+  margin-top: 100px;
+}
+
+.table-head-flex {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.add-bike {
+  margin-top: 25px;
+}
+
