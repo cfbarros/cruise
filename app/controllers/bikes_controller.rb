@@ -3,13 +3,18 @@
   before_action :set_bike, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @bikes = policy_scope(Bike).where.not(latitude: nil, longitude: nil)
+
+    if params[:query].present?
+      @bikes = policy_scope(Bike.search_by_address(params[:query]))
+    else
+      @bikes = policy_scope(Bike).where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @bikes.map do |bike|
       {
         lat: bike.latitude,
         lng: bike.longitude
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        # infoWindow: { content: render_to_string(partial: "/bikes/map_box", locals: { flat: flat }) }
       }
     end
   end
