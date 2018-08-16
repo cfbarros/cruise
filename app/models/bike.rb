@@ -5,4 +5,13 @@ class Bike < ApplicationRecord
   belongs_to :user
   has_many :users, through: :rents
   validates :kind, :address, :size, :price, presence: true
+
+  def kind_options
+    [:Street, :Mountain, :Electric]
+  end
+
+  def size_options
+    [:Small, :Medium, :Large]
+  end
+
 end
