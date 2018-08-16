@@ -17,6 +17,7 @@
   padding: 0px 15px;
 }
 
+
 .breath {
   margin-top: 50px;
 }
@@ -27,4 +28,27 @@
   select {
     margin-bottom: 15px;
   }
+
+.top-text {
+  margin-bottom: 50px;
+}
+
+.bike-owner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.avatar-large {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.owner-info {
+  margin-left: 10px;
+}
+
+.block-around {
+  background-color: white;
+  padding: 25px;
+  height: 420px;
 }

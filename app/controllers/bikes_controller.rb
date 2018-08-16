@@ -28,7 +28,7 @@
     @bike.user = current_user
     authorize @bike
     if @bike.save
-      redirect_to @bike
+      redirect_to user_path(@bike.user)
     else
       render :new
     end
