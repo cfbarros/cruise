@@ -33,7 +33,7 @@
     @bike.user = current_user
     authorize @bike
     if @bike.save
-      redirect_to user_path(@bike.user)
+      redirect_to user_path(@bike.user), notice: 'Bike was successfully added.'
     else
       render :new
     end
@@ -46,7 +46,7 @@
   def update
     @bike = Bike.update(bike_params)
     if @bike.save
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: 'Bike listing was successfully updated.'
     else
       render :edit
     end
@@ -54,7 +54,10 @@
 
   def destroy
     @bike.destroy
-    redirect_to user_path(@user)
+     respond_to do |format|
+      format.html { redirect_to user_path(@user), notice: 'Bike listing was successfully destroyed :(' }
+      format.json { head :no_content }
+    end
   end
 
   private
