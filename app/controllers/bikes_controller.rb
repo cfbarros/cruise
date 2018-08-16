@@ -59,7 +59,7 @@
   end
 
   def bike_params
-    params.require(:bike).permit(:kind, :size, :address, :brand, :price)
+    params.require(:bike).permit(:kind, :size, :address, :brand, :price, :photo)
   end
 
   def user_not_authorized(exception)
