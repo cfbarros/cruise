@@ -7,7 +7,7 @@ SIZES = %w[Small Medium Large]
 10.times do
   user = User.new(email: Faker::Internet.email, password: rand(100_000..999_999),
               first_name: Faker::BreakingBad.character, address: Faker::Address.full_address)
-  bike = Bike.new(kind: KINDS.sample, brand: Faker::Esport.team, location: Faker::Address.full_address,
+  bike = Bike.new(kind: KINDS.sample, brand: Faker::Esport.team, address: Faker::Address.full_address,
                  size: SIZES.sample, price: rand(10..25))
   user.save
   bike.user = user
@@ -20,3 +20,11 @@ end
   rent.bike = Bike.find(rand(1..10))
   rent.save
 end
+
+cruise = User.new(email: "cruise@gmail.com", password: "999999", first_name: "Cruise",
+            last_name: :bikes, address: "Rio de Janeiro")
+cruise.save
+rent = Rent.new
+rent.user = cruise
+rent.bike = Bike.find(rand(1..10))
+rent.save

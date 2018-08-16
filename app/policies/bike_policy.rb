@@ -2,7 +2,7 @@ class BikePolicy < ApplicationPolicy
 
   def permitted_attributes
     if user.admin? || user.owner_of?(bike)
-      [:kind, :size, :location, :brand, :price]
+      [:kind, :size, :address, :brand, :price]
     else
       [:tag_list]
     end

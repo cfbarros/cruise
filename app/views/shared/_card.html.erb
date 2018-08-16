@@ -1,14 +1,13 @@
-
+<%= link_to bike_path(bike), class: 'white' do %>
 
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=1334&q=80');">
       <div class="card-category">$<%= bike.price %></div>
       <div class="card-description">
         <h2><%= bike.kind %></h2>
         <p><%= bike.brand %></p>
       </div>
       <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" href="#" ></a>
     </div>
   </div>
-
+<% end %>
