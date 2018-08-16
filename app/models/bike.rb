@@ -21,5 +21,15 @@ class Bike < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
+  pg_search_scope :search_by_kind,
+  against: [ :kind ],
+  using: {
+    tsearch: { prefix: true }
+    }
+  pg_search_scope :search_by_size,
+  against: [ :size ],
+  using: {
+    tsearch: { prefix: true }
+    }
 end
+

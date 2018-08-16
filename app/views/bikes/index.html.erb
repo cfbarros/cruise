@@ -8,10 +8,29 @@
 <div class="topnav">
   <div class="filters">
     <a class="active" href="#home">ALL</a>
-    <a href="#about">KIND</a>
-    <a href="#contact">SIZE</a>
-    <a href="#contact">BRAND</a>
+    <ul class="filter-list list-inline">
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">KIND <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Street</a></li>
+          <li><a href="#">Mountain</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">SIZE <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
+
   <div class="search-bar">
     <%= form_tag bikes_path, method: :get do %>
       <%= text_field_tag :query,
