@@ -7,25 +7,24 @@
 <!-- Filter bar -->
 <div class="topnav">
   <div class="filters">
-    <a class="active" href="#home">ALL</a>
+    <%= link_to "ALL", bikes_path, class:"active" %>
+<!--     <a class="active" href="#home">ALL</a> -->
     <ul class="filter-list list-inline">
       <li class="dropdown">
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle">KIND <b class="caret"></b></a>
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">KIND </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Street</a></li>
-          <li><a href="#">Mountain</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li><%= link_to "Street", controller: "bikes", action: "index", kind: "street" %></li>
+          <li><%= link_to "Mountain", controller: "bikes", action: "index", kind: "mountain" %></li>
+          <li><%= link_to "Electric", controller: "bikes", action: "index", kind: "electric" %></li>
         </ul>
       </li>
 
       <li class="dropdown">
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle">SIZE <b class="caret"></b></a>
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">SIZE </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li><%= link_to "Small", controller: "bikes", action: "index", size: "small" %></li>
+          <li><%= link_to "Medium", controller: "bikes", action: "index", size: "medium" %></li>
+          <li><%= link_to "Large", controller: "bikes", action: "index", size: "large" %></li>
         </ul>
       </li>
     </ul>
@@ -33,8 +32,8 @@
 
   <div class="search-bar">
     <%= form_tag bikes_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
+      <%= text_field_tag :address,
+        params[:address],
         class: "form-control",
         placeholder: "Find a bike near you"
       %>
