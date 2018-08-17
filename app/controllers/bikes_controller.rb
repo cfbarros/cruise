@@ -4,8 +4,12 @@
 
   def index
 
-    if params[:query].present?
-      @bikes = policy_scope(Bike.search_by_address(params[:query]))
+    if params[:address].present?
+      @bikes = policy_scope(Bike.search(params[:address]))
+    elsif params[:kind].present?
+      @bikes = policy_scope(Bike.search(params[:kind]))
+    elsif params[:size].present?
+      @bikes = policy_scope(Bike.search(params[:size]))
     else
       @bikes = policy_scope(Bike).where.not(latitude: nil, longitude: nil)
     end

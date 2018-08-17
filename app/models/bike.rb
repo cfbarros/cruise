@@ -16,20 +16,10 @@ class Bike < ApplicationRecord
   end
 
   include PgSearch
-  pg_search_scope :search_by_address,
-    against: [ :address ],
+  pg_search_scope :search,
+    against: [ :address, :kind, :size ],
     using: {
       tsearch: { prefix: true }
-    }
-  pg_search_scope :search_by_kind,
-  against: [ :kind ],
-  using: {
-    tsearch: { prefix: true }
-    }
-  pg_search_scope :search_by_size,
-  against: [ :size ],
-  using: {
-    tsearch: { prefix: true }
     }
 end
 
