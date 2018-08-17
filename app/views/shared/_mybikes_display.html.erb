@@ -7,46 +7,55 @@
         <% if bike.rents.empty? %>
           <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
           <div class="renter-name">
-            <p>RENTED BY</p>
-            <h3> Available </h3>
+            <h4>RENTED BY</h4>
+            <p> Available </p>
           </div>
           <div class="start-date">
-            <h3> Available </h3>
+            <p> Available </p>
           </div>
           <div cass="end-date">
-            <h3> Available </h3>
+            <p> Available </p>
           </div>
-          <div class="edit-delete text-muted">
-          <%= link_to edit_bike_path(bike), class: "icon-align" do %>
+          <div class="info-block">
+         <div class="edit">
+            <%= link_to edit_bike_path(bike), class: "icon-display" do %>
             <i class="fas fa-edit"></i><p>EDIT BIKE</p>
           <% end %>
-          <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-align" do %>
+         </div>
+          <div class="delete">
+            <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-display" do %>
             <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
           <% end %>
+          </div>
 
         <% else %>
 
           <% bike.rents.each do |rent| %>
             <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
             <div class="renter-name">
-              <p>RENTED BY</p>
-              <h3> <%= rent.user.email %></h3>
+              <h4>RENTED BY</h4>
+              <p> <%= rent.user.email %></p>
             </div>
             <div class="start-date">
-              <h3>
+              <h4>FROM</h4>
+              <p>
                 <%= rent.start_date.try(:strftime, '%m-%e-%y') %>
-              </h3>
+              </p>
             </div>
             <div class="end-date">
-              <h3>
+              <h4>TO</h4>
+              <p>
                 <%= rent.end_date.try(:strftime, '%m-%e-%y') %>
-              </h3>
+              </p>
             </div>
-            <div class="edit-delete text-muted">
-            <%= link_to edit_bike_path(bike), class: "icon-align" do %>
+            <div class="info-block">
+            <div class="edit">
+              <%= link_to edit_bike_path(bike), class: "icon-display" do %>
               <i class="fas fa-edit"></i><p>EDIT BIKE</p>
             <% end %>
-            <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-align" do %>
+            </div>
+            <div class="delete">
+              <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-display" do %>
               <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
             <% end %>
             </div>
