@@ -13,6 +13,21 @@ BIKE_PHOTOS = [
   'https://res.cloudinary.com/hiutwig/image/upload/v1534527151/q8cjuorj59trkacauzcs.jpg'
 ]
 
+ADDRESSES = [
+  'Visconde de Pirajá, 495, Ipanema, Rio de Janeiro',
+  'Prudente de Morais, 300, Ipanema, Rio de Janeiro',
+  'Visconde de Pirajá, 250, Ipanema, Rio de Janeiro',
+  'Nascimento Silva, 600, Ipanema, Rio de Janeiro',
+  'Carlos Gois, 340, Leblon, Rio de Janeiro',
+  'Delfim Moreira, 300, Leblon, Rio de Janeiro',
+  'Visconde de Albuquerque, 495, Leblon, Rio de Janeiro',
+  'General San Martin, 695, Leblon, Rio de Janeiro',
+  'Epitacio Pessoa, 900, Lagoa, Rio de Janeiro',
+  'Epitacio Pessoa, 1000, Lagoa, Rio de Janeiro',
+  'Epitacio Pessoa, 1100, Lagoa, Rio de Janeiro',
+  'Epitacio Pessoa, 1200, Lagoa, Rio de Janeiro',
+]
+
 
 # creates a constant for kinds of bikes
 KINDS = %w[Mountain Street Electric]
@@ -26,12 +41,13 @@ SIZES = %w[Small Medium Large]
   bike = Bike.new(
     kind: KINDS.sample,
     brand: Faker::Esport.team,
-    address: Faker::Address.full_address,
+    address: ADDRESSES[n],
     size: SIZES.sample, price: rand(10..25),
     remote_photo_url: BIKE_PHOTOS[n]
   )
   user.save
   bike.user = user
+  sleep 1
   bike.save!
 end
 
