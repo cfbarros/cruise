@@ -2,7 +2,6 @@ class User < ApplicationRecord
   # user database relations
   has_many :bikes, dependent: :destroy
   has_many :rents, dependent: :destroy
-  has_many :bikes, through: :rents
 
   def bike_rents
     renters = []
