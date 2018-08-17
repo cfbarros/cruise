@@ -19,7 +19,7 @@ KINDS = %w[Mountain Street Electric]
 # creates a constant for size of bikes
 SIZES = %w[Small Medium Large]
 # iterates over creating a user and a bike and making the relation between the two
-36.times do
+12.times do |n|
   puts 'Generating bikes and users'
   user = User.new(email: Faker::Internet.email, password: rand(100_000..999_999),
               first_name: Faker::BreakingBad.character, address: Faker::Address.full_address)
@@ -28,7 +28,7 @@ SIZES = %w[Small Medium Large]
     brand: Faker::Esport.team,
     address: Faker::Address.full_address,
     size: SIZES.sample, price: rand(10..25),
-    remote_photo_url: BIKE_PHOTOS.sample
+    remote_photo_url: BIKE_PHOTOS[n]
   )
   user.save
   bike.user = user
