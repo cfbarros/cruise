@@ -46,12 +46,12 @@
 <div class="bikes-container">
   <div class="cards-container">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6">
+      <div class="col-xs-12 col-sm-12 col-md-7">
         <% @bikes.each do |bike| %>
           <%= render 'shared/card', bike: bike %>
         <% end %>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 order-sm-first sticky">
+      <div class="col-xs-12 col-sm-12 col-md-5 order-sm-first sticky">
         <div id="map" data-markers="<%= @markers.to_json %>"></div>
     </div>
     </div>
