@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   # user database relations
+  mount_uploader :photo, PhotoUploader
   has_many :bikes, dependent: :destroy
   has_many :rents, dependent: :destroy
 
