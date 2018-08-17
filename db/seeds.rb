@@ -47,7 +47,7 @@ SIZES = %w[Small Medium Large]
   )
   user.save
   bike.user = user
-  sleep 1
+  sleep 5
   bike.save!
 end
 
