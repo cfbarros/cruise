@@ -10,8 +10,11 @@
     <%= f.select(:size, @bike.size_options) %>
     <%= f.input :photo %>
   </div>
+  <br>
 
-  <%= f.submit %>
+  <%= f.submit "Add your Bike", :class =>"btn btn-primary btn-block" %>
+  <br>
+  <br>
 
 <% end %>
 
