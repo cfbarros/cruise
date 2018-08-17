@@ -56,7 +56,7 @@
 .dropdown:hover .dropdown-menu {
     display: block;
     list-style: none;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .filter-list{
@@ -64,3 +64,6 @@
    list-style: none;
 }
 
+.dropdown {
+  z-index: 1000;
+}
