@@ -16,12 +16,20 @@ class BikePolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    record.user == user
+  end
+
   def create?
     if user.nil?
       redirect_to new_user_registration_path
     else
       true
     end
+  end
+
+  def destroy?
+    record.user == user
   end
 
   class Scope < Scope
