@@ -1,13 +1,28 @@
+ADDRESSES = [
+  'Visconde de Pirajá, 495, Ipanema, Rio de Janeiro',
+  'Prudente de Morais, 300, Ipanema, Rio de Janeiro',
+  'Visconde de Pirajá, 250, Ipanema, Rio de Janeiro',
+  'Nascimento Silva, 600, Ipanema, Rio de Janeiro',
+  'Carlos Gois, 340, Leblon, Rio de Janeiro',
+  'Delfim Moreira, 300, Leblon, Rio de Janeiro',
+  'Visconde de Albuquerque, 495, Leblon, Rio de Janeiro',
+  'General San Martin, 695, Leblon, Rio de Janeiro',
+  'Epitacio Pessoa, 900, Lagoa, Rio de Janeiro',
+  'Epitacio Pessoa, 1000, Lagoa, Rio de Janeiro',
+  'Epitacio Pessoa, 1100, Lagoa, Rio de Janeiro',
+  'Epitacio Pessoa, 1200, Lagoa, Rio de Janeiro',
+]
+
 
 # creates a constant for kinds of bikes
 KINDS = %w[Mountain Street Electric]
 # creates a constant for size of bikes
 SIZES = %w[Small Medium Large]
 # iterates over creating a user and a bike and making the relation between the two
-10.times do
+36.times do
   user = User.new(email: Faker::Internet.email, password: rand(100_000..999_999),
               first_name: Faker::BreakingBad.character, address: Faker::Address.full_address)
-  bike = Bike.new(kind: KINDS.sample, brand: Faker::Esport.team, address: Faker::Address.full_address,
+  bike = Bike.new(kind: KINDS.sample, brand: Faker::Esport.team, address: ADDRESSES.sample,
                  size: SIZES.sample, price: rand(10..25))
   user.save
   bike.user = user
