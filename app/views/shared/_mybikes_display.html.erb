@@ -3,22 +3,41 @@
     <ul class="bikelist">
       <li class="bikebox  flex-me">
         <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=1267&q=80" alt="" class="avatar-large">
-        <div class="renter-name">
+        <% if bike.rents = [] %>
+          <div class="renter-name">
+              <p>Available</p>
+          </div>
+          <div class="start-date">
+            <h4>Start date:</h4>
             <p>Available</p>
-        </div>
-        <div class="start-date">
-          <h4>Start date:</h4>
-          <p>Available</p>
 
-        </div>
-        <div class="end-date">
-          <h4>End date:</h4>
-          <p>Available</p>
+          </div>
+          <div class="end-date">
+            <h4>End date:</h4>
+            <p>Available</p>
 
-        </div>
-        <div class="edit-delete">
+          </div>
+          <div class="edit-delete">
 
-        </div>
+          </div>
+        <% else %>
+          <div class="renter-name">
+            <p><%= rent.user.first_name %></p>
+          </div>
+          <div class="start-date">
+            <h4>Start date:</h4>
+            <p><%= rent.start-date %></p>
+
+          </div>
+          <div class="end-date">
+            <h4>End date:</h4>
+            <p><%= rent.end-date %></p>
+
+          </div>
+          <div class="edit-delete">
+
+          </div>
+        <% end %>
       </li>
     </ul>
   <% end %>
