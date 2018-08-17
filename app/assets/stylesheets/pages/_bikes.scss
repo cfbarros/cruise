@@ -3,23 +3,23 @@
   justify-content: space-between;
 }
 
-  #map {
-  height: calc(100vh);
-  flex: 0 1;
-  // position: sticky !important;
-  top: 0 !important;
-  margin: 0px;
-  padding: 0px;
-  }
+#map {
+height: calc(100vh);
+flex: 0 1;
+// position: sticky !important;
+top: 0 !important;
+margin: 0px;
+padding: 0px;
+}
 
-  .sticky {
-  height: calc(100vh);
-  flex: 0 1;
-  position: sticky !important;
-  top: 0 !important;
-  margin: 0px;
-  padding: 0px;
-  }
+.sticky {
+height: calc(100vh);
+flex: 0 1;
+position: sticky !important;
+top: 0 !important;
+margin: 0px;
+padding: 0px;
+}
 
 .cards-container {
   width: 100%;
@@ -66,3 +66,13 @@
   width: 200px;
 }
 
+
+.icon-display {
+  display: flex;
+
+}
+
+.edit-delete {
+  display: flex;
+  width: 100%;
+}

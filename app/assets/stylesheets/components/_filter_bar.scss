@@ -53,5 +53,17 @@
         border: 1px solid #ccc;
     }
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+    list-style: none;
+    z-index: 1000;
+}
 
+.filter-list{
+  display: flex;
+   list-style: none;
+}
 
+.dropdown {
+  z-index: 1000;
+}

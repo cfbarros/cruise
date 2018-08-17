@@ -31,7 +31,7 @@
 .table-head-flex {
   display: flex;
   justify-content: space-around;
-  align-content: center;
+  // align-content: center;
 }
 
 .add-bike {
@@ -47,13 +47,15 @@
 .bikelist {
   border: 1px solid #dce0e0;
   padding: 0 20px;
+  background-color: white;
   margin-top: 20px;
 }
 
 .bikebox {
   display: flex;
+
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 
@@ -81,4 +83,3 @@
 .h3 {
   font-size: 15px;
 }
-
