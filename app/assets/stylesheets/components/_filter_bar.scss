@@ -1,6 +1,8 @@
 .topnav {
-    overflow: hidden;
-    background-color: #e9e9e9;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #e9e9e9;
 }
 
 /* Style the links inside the navigation bar */
@@ -27,13 +29,14 @@
 }
 
 /* Style the search box inside the navigation bar */
-.topnav input[type=text] {
+.search-bar [type=text] {
     float: right;
     padding: 6px;
     border: none;
     margin-top: 8px;
-    margin-right: 16px;
+    margin-right: 0px;
     font-size: 17px;
+    width: 50vw;
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
@@ -50,3 +53,14 @@
         border: 1px solid #ccc;
     }
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+    list-style: none;
+    z-index: 100;
+}
+
+.filter-list{
+  display: flex;
+   list-style: none;
+}
+

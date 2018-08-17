@@ -1,19 +1,28 @@
 .bikes-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-  #map {
-  height: calc(100vh);
-  flex: 0 0 450px;
-  position: sticky !important;
-  top: 0 !important;
-  margin: 0px;
-  padding: 0px;
-  }
+#map {
+height: calc(100vh);
+flex: 0 1;
+// position: sticky !important;
+top: 0 !important;
+margin: 0px;
+padding: 0px;
+}
+
+.sticky {
+height: calc(100vh);
+flex: 0 1;
+position: sticky !important;
+top: 0 !important;
+margin: 0px;
+padding: 0px;
+}
 
 .cards-container {
-  width: 90%;
+  width: 100%;
   padding: 0px 15px;
 }
 
@@ -52,4 +61,7 @@
   background-color: white;
   padding: 25px;
   height: 420px;
+}
+.map-area{
+  width: 200px;
 }
