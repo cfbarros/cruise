@@ -4,16 +4,43 @@
   <div class="tabs">
     <ul class="bikelist">
       <li class="bikebox">
-        <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
+        <% if bike.rents.empty? %>
+          <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
+          <div class="renter-name">
+            <p>RENTED BY</p>
+            <h3> Available </h3>
+          </div>
+          <div class="start-date">
+            <h3> Available </h3>
+          </div>
+          <div cass="end-date">
+            <h3> Available </h3>
+          </div>
+          <div class="edit-delete text-muted">
+          <%= link_to edit_bike_path(bike), class: "icon-align" do %>
+            <i class="fas fa-edit"></i><p>EDIT BIKE</p>
+          <% end %>
+          <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-align" do %>
+            <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
+          <% end %>
+
+        <% else %>
+
+          <% bike.rents.each do |rent| %>
+            <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
             <div class="renter-name">
               <p>RENTED BY</p>
-              <h3> <%= @user.first_name %></h3>
+              <h3> <%= rent.user.email %></h3>
             </div>
             <div class="start-date">
-              <%= @start_date.try(:strftime, '%m-%e-%y') %>
+              <h3>
+                <%= rent.start_date.try(:strftime, '%m-%e-%y') %>
+              </h3>
             </div>
             <div cass="end-date">
-              <%= @end_date.try(:strftime, '%m-%e-%y') %>
+              <h3>
+                <%= rent.end_date.try(:strftime, '%m-%e-%y') %>
+              </h3>
             </div>
             <div class="edit-delete text-muted">
             <%= link_to edit_bike_path(bike), class: "icon-align" do %>
@@ -22,7 +49,9 @@
             <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-align" do %>
               <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
             <% end %>
-            </div>
+          <% end %>
+        <% end %>
+        </div>
       </li>
     </ul>
   </div>
