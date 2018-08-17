@@ -40,24 +40,23 @@
   end
 
   def edit
-    @bike = Bike.find(bike_parms)
+    authorize @bike
   end
 
   def update
-    @bike = Bike.update(bike_params)
+    @bike.update(bike_params)
+    authorize @bike
     if @bike.save
-      redirect_to user_path(@user), notice: 'Bike listing was successfully updated.'
+      redirect_to user_path(current_user), notice: 'Bike listing was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
+    authorize @bike
     @bike.destroy
-     respond_to do |format|
-      format.html { redirect_to user_path(@user), notice: 'Bike listing was successfully destroyed :(' }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(current_user), notice: 'Bike listing was successfully destroyed :('
   end
 
   private

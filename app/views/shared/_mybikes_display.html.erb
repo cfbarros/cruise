@@ -16,9 +16,13 @@
               <%= @end_date.try(:strftime, '%m-%e-%y') %>
 
             </div>
-            <div class="edit-delete">
-            <%= link_to "EDIT BIKE", edit_bike_path, class: "fab fa-edit" %>
-            <%= link_to "DELETE BIKE", user_path, class: "fab fa-trash-alt" %>
+            <div class="edit-delete text-muted">
+            <%= link_to edit_bike_path(bike), class: "icon-align" do %>
+              <i class="fas fa-edit"></i><p>EDIT BIKE</p>
+            <% end %>
+            <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-align" do %>
+              <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
+            <% end %>
             </div>
       </li>
     </ul>
