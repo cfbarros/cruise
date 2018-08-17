@@ -9,9 +9,13 @@
     <%= f.label :size %>
     <%= f.select(:size, @bike.size_options) %>
     <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
+  <br>
 
-  <%= f.submit %>
+  <%= f.submit "Add your Bike", :class =>"btn btn-primary btn-block" %>
+  <br>
+  <br>
 
 <% end %>
 
