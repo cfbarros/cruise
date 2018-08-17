@@ -3,7 +3,7 @@
     <div class="container make-it-flex">
       <div>
         <% rent = current_user.rents.first %>
-        <h1><%= rent.bike.user.first_name %>'s Bike is your bike until <%= rent.end_date.try(:srftime, '%m-%e-%y') %></h1>
+        <h1>You just rented <%= rent.bike.user.first_name %>'s bike!</h1>
         <div class="return">
           <h3>Return the bike to: </h3>
           <p>   <%= rent.bike.user.address %></p>

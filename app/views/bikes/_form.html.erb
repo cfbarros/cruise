@@ -9,6 +9,7 @@
     <%= f.label :size %>
     <%= f.select(:size, @bike.size_options) %>
     <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
   <br>
 
