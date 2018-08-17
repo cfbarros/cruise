@@ -1,7 +1,7 @@
 <%= link_to bike_path(bike), class: 'white' do %>
 
   <div class="col-xs-6">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path bike.photo %>);">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path (bike.remote_photo_url.nil? ? '' : bike.photo) %>);">
       <div class="card-category">$<%= bike.price %></div>
       <div class="card-description">
         <h2><%= bike.kind %></h2>
