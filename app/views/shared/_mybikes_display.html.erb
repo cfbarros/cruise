@@ -7,7 +7,7 @@
         <% if bike.rents.empty? %>
           <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
           <div class="renter-name">
-            <p>RENTED BY</p>
+            <h4>RENTED BY</h4>
             <p> Available </p>
           </div>
           <div class="start-date">
@@ -33,17 +33,17 @@
           <% bike.rents.each do |rent| %>
             <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
             <div class="renter-name">
-              <p>RENTED BY</p>
+              <h4>RENTED BY</h4>
               <p> <%= rent.user.email %></p>
             </div>
             <div class="start-date">
-              <p>FROM</p>
+              <h4>FROM</h4>
               <p>
                 <%= rent.start_date.try(:strftime, '%m-%e-%y') %>
               </p>
             </div>
             <div class="end-date">
-              <p>TO</p>
+              <h4>TO</h4>
               <p>
                 <%= rent.end_date.try(:strftime, '%m-%e-%y') %>
               </p>

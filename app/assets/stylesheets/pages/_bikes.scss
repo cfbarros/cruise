@@ -69,7 +69,12 @@ padding: 0px;
 
 .icon-display {
   display: flex;
+  justify-content: space-between;
   font-size: 13px;
   color: #FF2E4C;
+  padding: 10px;
+}
 
+.icon-display a:hover {
+  text-decoration: none;
 }
