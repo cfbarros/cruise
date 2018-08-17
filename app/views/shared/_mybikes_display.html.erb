@@ -34,7 +34,7 @@
             <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
             <div class="renter-name">
               <h4>RENTED BY</h4>
-              <p> <%= rent.user.email %></p>
+              <p> <%= rent.user.first_name %></p>
             </div>
             <div class="start-date">
               <h4>FROM</h4>
