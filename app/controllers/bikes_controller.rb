@@ -17,8 +17,8 @@
     @markers = @bikes.map do |bike|
       {
         lat: bike.latitude,
-        lng: bike.longitude
-        # infoWindow: { content: render_to_string(partial: "/bikes/map_box", locals: { flat: flat }) }
+        lng: bike.longitude,
+        infoWindow: { content: render_to_string(partial: "/bikes/map_box", locals: { bike: bike }) }
       }
     end
   end

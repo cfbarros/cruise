@@ -1,62 +1,64 @@
 <div class="container">
   <% user = current_user %>
-    <% user.bikes.each do |bike|%>
-  <div class="tabs">
-    <ul class="bikelist">
-      <li class="bikebox">
-        <% if bike.rents.empty? %>
-          <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
-          <div class="renter-name">
-            <h4>AVAILABLE</h4>
-          </div>
-          <div class="info-block">
-         <div class="edit">
-            <%= link_to edit_bike_path(bike), class: "icon-display" do %>
-            <i class="fas fa-edit"></i><p>EDIT BIKE</p>
-          <% end %>
-         </div>
-          <div class="delete">
-            <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-display" do %>
-            <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
-          <% end %>
-          </div>
-
-        <% else %>
-
-          <% bike.rents.each do |rent| %>
+  <% user.bikes.each do |bike|%>
+    <div class="tabs">
+      <ul class="bikelist">
+        <li class="bikebox">
+          <% if bike.rents.empty? %>
             <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
             <div class="renter-name">
-              <h4>RENTED BY</h4>
-              <p> <%= rent.user.first_name %></p>
-            </div>
-            <div class="start-date">
-              <h4>FROM</h4>
-              <p>
-                <%= rent.start_date.try(:strftime, '%m-%e-%y') %>
-              </p>
-            </div>
-            <div class="end-date">
-              <h4>TO</h4>
-              <p>
-                <%= rent.end_date.try(:strftime, '%m-%e-%y') %>
-              </p>
+              <h4>AVAILABLE</h4>
             </div>
             <div class="info-block">
-            <div class="edit">
-              <%= link_to edit_bike_path(bike), class: "icon-display" do %>
-              <i class="fas fa-edit"></i><p>EDIT BIKE</p>
-            <% end %>
+              <div class="edit">
+                <%= link_to edit_bike_path(bike), class: "icon-display" do %>
+                  <i class="fas fa-edit"></i><p>EDIT BIKE</p>
+                <% end %>
+               </div>
+              <div class="delete">
+                <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-display" do %>
+                  <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
+                <% end %>
+              </div>
             </div>
-            <div class="delete">
-              <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-display" do %>
-              <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
+
+          <% else %>
+
+            <% bike.rents.each do |rent| %>
+              <%= cl_image_tag(bike.photo, width: 160, height: 160, crop: :thumb) %>
+              <div class="renter-name">
+                <h4>RENTED BY</h4>
+                <p> <%= rent.user.first_name %></p>
+              </div>
+              <div class="start-date">
+                <h4>FROM</h4>
+                <p>
+                  <%= rent.start_date.try(:strftime, '%m-%e-%y') %>
+                </p>
+              </div>
+              <div class="end-date">
+                <h4>TO</h4>
+                <p>
+                  <%= rent.end_date.try(:strftime, '%m-%e-%y') %>
+                </p>
+              </div>
+              <div class="info-block">
+                <div class="edit">
+                  <%= link_to edit_bike_path(bike), class: "icon-display" do %>
+                  <i class="fas fa-edit"></i><p>EDIT BIKE</p>
+                <% end %>
+                </div>
+                <div class="delete">
+                  <%= link_to bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "icon-display" do %>
+                    <i class="fas fa-trash-alt"></i><p>DELETE BIKE</p>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
-            </div>
           <% end %>
-        <% end %>
-      </li>
-    </ul>
-  </div>
+        </li>
+      </ul>
+    </div>
   <% end %>
 </div>
 
